@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kaadhka Dhaqtarka</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7f9;
+      color: #222;
+    }
+
+    /* HEADER + LOGO BACKGROUND */
+    .hero {
+      position: relative;
+      min-height: 260px;
+      background: linear-gradient(
+        135deg,
+        #075985,
+        #0e7490
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 25px;
+    }
+
+    /* LOGO OO BACKGROUND KA QAYB KA AH */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background-image: url("logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.18;
+      right: -25px;
+      top: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 650px;
+    }
+
+    .hero-content h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 700px;
+      margin: 30px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h2 {
+      color: #075985;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .notice {
+      background: #fff8dc;
+      border: 1px solid #e4d28a;
+      padding: 14px;
+      border-radius: 9px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    button {
+      width: 100%;
+      background: #075985;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 9px;
+      font-size: 17px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #064e73;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #075985;
+    }
+
+    textarea {
+      height: 140px;
+      resize: vertical;
+    }
+
+    #timer {
+      margin: 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #075985;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .success {
+      background: #e8f7ed;
+      border: 1px solid #a8d8b5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .success h2 {
+      color: #176b35;
+    }
+
+    .success p {
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 230px;
+      }
+
+      .hero::before {
+        width: 210px;
+        height: 210px;
+        right: -45px;
+      }
+
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .card p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <h1>Kaadhka Dhaqtarka</h1>
+
+      <p>
+        Wacyigelin iyo isdiiwaangelin ku saabsan
+        kaadhadhka dhaqaatiirta.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- BOGGA HORE -->
+    <section class="card" id="homeSection">
+
+      <div class="notice">
+        <strong>Fiiro gaar ah:</strong>
+        Boggan waa adeeg maamul/wacyigelin ah oo uu maamulo maamulka boggan.
+      </div>
+
+      <h2>Muwaadin</h2>
+
+      <p>
+        Dhawaan waxaa la laalay xeerkii dhaqaatiirta u yaallay.
+        Sidaas darteed waxaan shacabka ugu baaqaynaa in
+        muwaadin kastaa uu isdiiwaangeliyo si uu u qaato
+        kaadhka dhaqtarka.
+      </p>
+
+      <p>
+        Kuwii hore u haystay kaadhka waxaa loo cusboonaysiin doonaa.
+      </p>
+
+      <p>
+        Fadlan muwaadin, haddii aad rabto inaad isdiiwaangeliso,
+        halkan ka taabo.
+      </p>
+
+      <button onclick="showNumber()">
+        Halkan Taabo
+      </button>
+
+    </section>
+
+
+    <!-- NUMBER -->
+    <section class="card hidden" id="numberSection">
+
+      <h2>Geli Lambarkaaga</h2>
+
+      <p>
+        Fadlan geli lambarka telefoonkaaga si aad u sii waddo.
+      </p>
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Geli lambarka telefoonka"
+        required
+      >
+
+      <button onclick="startWaiting()">
+        Sii wad
+      </button>
+
+      <div id="timer"></div>
+
+    </section>
+
+
+    <!-- FARIINTA -->
+    <section class="card hidden" id="messageSection">
+
+      <h2>Fariintaada</h2>
+
+      <p>
+        Hadda waxaad qori kartaa fariintaada.
+      </p>
+
+      <form
+        id="registerForm"
+        action="https://formspree.io/f/xnpjnzak"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="phone"
+          id="savedPhone"
+        >
+
+        <textarea
+          name="message"
+          placeholder="Halkan ku qor fariintaada..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Register
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- FARIINTA GUUSHA -->
+    <section class="card hidden" id="successSection">
+
+      <div class="success">
+
+        <h2>Waad ku mahadsan tahay</h2>
+
+        <p>
+          Fadlan muwaadin, waanu helnay fariintaada
+          iyo isdiiwaangelintaada.
+        </p>
+
+        <p>
+          Waxaanu dib kaaga soo sheegi doonaa xarunta
+          aad ka qaadan doonto kaadhka dhaqtarka.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 — Adeegga Kaadhka Dhaqtarka
+  </footer>
+
+
+  <script>
+
+    /* MARKA HALKAN TAABO */
+    function showNumber() {
+
+      document
+        .getElementById("homeSection")
+        .classList.add("hidden");
+
+      document
+        .getElementById("numberSection")
+        .classList.remove("hidden");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+
+    /* 30 ILBIRIQSI */
+    function startWaiting() {
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      if (phone === "") {
+
+        alert("Fadlan geli lambarka telefoonkaaga.");
+
+        return;
+      }
+
+      document
+        .getElementById("savedPhone")
+        .value = phone;
+
+      const timer =
+        document.getElementById("timer");
+
+      let seconds = 30;
+
+      timer.innerHTML =
+        "Fadlan sug " + seconds + " ilbiriqsi...";
+
+      const countdown =
+        setInterval(function() {
+
+          seconds--;
+
+          timer.innerHTML =
+            "Fadlan sug " + seconds + " ilbiriqsi...";
+
+          if (seconds <= 0) {
+
+            clearInterval(countdown);
+
+            document
+              .getElementById("numberSection")
+              .classList.add("hidden");
+
+            document
+              .getElementById("messageSection")
+              .classList.remove("hidden");
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+
+        }, 1000);
+    }
+
+
+    /* FORM SUBMIT */
+    document
+      .getElementById("registerForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        const button =
+          form.querySelector("button");
+
+        button.disabled = true;
+        button.innerHTML = "Waa la dirayaa...";
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        })
+
+        .then(function(response) {
+
+          if (response.ok) {
+
+            document
+              .getElementById("messageSection")
+              .classList.add("hidden");
+
+            document
+              .getElementById("successSection")
+              .classList.remove("hidden");
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+
+          } else {
+
+            button.disabled = false;
+            button.innerHTML = "Register";
+
+            alert(
+              "Fariinta lama diri karin. Fadlan isku day mar kale."
+            );
+          }
+
+        })
+
+        .catch(function() {
+
+          button.disabled = false;
+          button.innerHTML = "Register";
+
+          alert(
+            "Waxaa dhacay cilad. Fadlan isku day mar kale."
+          );
+
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>
